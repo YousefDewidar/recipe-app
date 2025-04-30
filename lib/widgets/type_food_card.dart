@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recips_app/model/recipe_model.dart';
+import 'package:recips_app/models/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
 
 class TypeFoodCard extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:recips_app/model/recipe_model.dart';
+import 'package:recips_app/models/recipe_model.dart';
 
 List<Recipe> recipeDetails() {
   List<Recipe> recipeList = [
