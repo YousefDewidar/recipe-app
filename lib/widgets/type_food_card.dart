@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/model/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
 
@@ -12,17 +11,16 @@ class TypeFoodCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.push(context, MaterialPageRoute(
         builder: (context) {
-          return RecipeDetailsView(rec: rec); 
+          return RecipeDetailsView(recipe: rec);
         },
       )),
       child: Padding(
         padding: const EdgeInsets.only(right: 8.0),
         child: Card(
-          color: rec.isActive ? kPrimaryColor : Colors.white,
+          color: Colors.white,
           surfaceTintColor: Colors.white,
           elevation: 8,
-          shadowColor:
-              rec.isActive ? kPrimaryColor : const Color.fromARGB(155, 0, 0, 0),
+          shadowColor: const Color.fromARGB(155, 0, 0, 0),
           shape: const StadiumBorder(),
           child: SizedBox(
             height: 150,
@@ -32,8 +30,8 @@ class TypeFoodCard extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                Image.asset(
-                  rec.img,
+                Image.network(
+                  rec.image,
                   height: 80,
                   width: 80,
                 ),

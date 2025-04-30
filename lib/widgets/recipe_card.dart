@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:recips_app/model/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
 
-class RecCard extends StatelessWidget {
-  const RecCard({
+class RecipeCard extends StatelessWidget {
+  const RecipeCard({
     super.key,
-    required this.rec,
+    required this.recipe,
     required this.index,
   });
-  final Recipe rec;
+  final Recipe recipe;
   final int index;
 
   @override
@@ -16,13 +16,13 @@ class RecCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => Navigator.push(context, MaterialPageRoute(
         builder: (context) {
-          return RecipeDetailsView(rec: rec);
+          return RecipeDetailsView(recipe: recipe);
         },
       )),
       child: Stack(clipBehavior: Clip.none, children: [
         Container(
-          padding: const EdgeInsets.only(left: 100, right: 12),
-          height: 80,
+          padding:
+              const EdgeInsets.only(left: 100, right: 12, top: 6, bottom: 6),
           width: double.infinity,
           clipBehavior: Clip.none,
           decoration: BoxDecoration(
@@ -37,14 +37,27 @@ class RecCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                rec.name,
+                recipe.name,
+                overflow: TextOverflow.ellipsis,
                 style:
-                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                    const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+              ),
+              Row(
+                children: [
+                  const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                    size: 16,
+                  ),
+                  Text(
+                    '${recipe.rating} (${recipe.reviewCount} reviews)',
+                    style: const TextStyle(fontSize: 14, color: Colors.grey),
+                  ),
+                ],
               ),
               Text(
-                rec.description,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontSize: 16, color: Colors.grey),
+                'Cook Time: ${recipe.cookTimeMinutes} minutes',
+                style: const TextStyle(fontSize: 14, color: Colors.grey),
               ),
             ],
           ),
@@ -55,16 +68,17 @@ class RecCard extends StatelessWidget {
           left: -2,
           top: -7,
           child: Stack(children: [
-            Container(
-              decoration: BoxDecoration(
-                  border: Border(
-                    left: BorderSide(
-                        width: 50,
-                        color: index % 2 != 0
-                            ? const Color.fromARGB(209, 245, 122, 163)
-                            : Colors.amber),
-                  ),
-                  borderRadius: BorderRadius.circular(50)),
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(50),
+                bottomLeft: Radius.circular(50),
+              ),
+              child: Container(
+                width: 45,
+                color: index % 2 != 0
+                    ? const Color.fromARGB(209, 245, 122, 163)
+                    : Colors.amber,
+              ),
             ),
             Positioned(
               left: 8,
@@ -74,13 +88,16 @@ class RecCard extends StatelessWidget {
                     ? const Color.fromARGB(255, 253, 217, 229)
                     : Colors.amberAccent,
                 radius: 40,
-                child: Image.asset(
-                  rec.img,
-                  width: 60,
-                  height: 60,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(50),
+                  child: Image.network(
+                    recipe.image,
+                    width: 60,
+                    height: 60,
+                  ),
                 ),
               ),
-            )
+            ),
           ]),
         ),
       ]),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recips_app/constant.dart';
 import 'package:recips_app/views/all_recipes_view.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class SplashView extends StatelessWidget {
+  const SplashView({super.key});
   static String id = 'home';
 
   @override
@@ -41,21 +41,14 @@ class HomeView extends StatelessWidget {
                   fontSize: 40,
                   fontWeight: FontWeight.w500),
             ),
-            const Text(
-              "Let's join our community\nto cook better food!",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
+          
             ElevatedButton(
               onPressed: () {
                 Navigator.pushNamedAndRemoveUntil(
                     context, AllRecipesView.id, (route) => false);
               },
               style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(kPrimaryColor),
+                backgroundColor: WidgetStatePropertyAll(kPrimaryColor),
               ),
               child: const Text(
                 'Get Started',

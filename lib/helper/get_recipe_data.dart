@@ -1,111 +1,112 @@
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/model/recipe_model.dart';
 
 List<Recipe> recipeDetails() {
   List<Recipe> recipeList = [
     Recipe(
-      name: 'Burger',
-      img: kBurgerImg,
-      description: 'A juicy and flavorful all-American classic.',
-      ingredients: {
-        'protein': 30,
-        'calories': 500,
-        'time': 25,
-      },
-      instructions: '''
-1. Form ground beef (or your preferred protein source) into patties slightly larger than the burger buns to account for shrinkage during cooking.
-2. Season the patties with salt, pepper, and your favorite burger seasoning.
-3. Heat a grill or pan over medium heat.
-4. Grill or pan-fry the patties for a few minutes per side, depending on desired doneness (rare, medium, well-done).
-5. Toast the burger buns if desired.
-6. Assemble your burger with your favorite toppings like lettuce, tomato, onion, cheese, pickles, ketchup, mustard, and mayonnaise.
-    ''',
+      id: 1,
+      name: "Classic Spaghetti Bolognese",
+      ingredients: [
+        "1 lb spaghetti",
+        "1 lb ground beef",
+        "1 onion, chopped",
+        "2 cloves garlic, minced",
+        "1 (28 oz) can crushed tomatoes",
+        "1 tsp dried oregano",
+        "1/2 tsp salt",
+        "1/4 tsp black pepper",
+        "2 tbsp olive oil",
+      ],
+      instructions: [
+        "Cook spaghetti according to package directions.",
+        "In a large skillet, brown ground beef over medium heat. Drain off any excess grease.",
+        "Add onion and garlic to the skillet and cook until softened.",
+        "Stir in crushed tomatoes, oregano, salt, and pepper. Bring to a simmer and cook for 15 minutes.",
+        "Serve the sauce over spaghetti.",
+      ],
+      prepTimeMinutes: 15,
+      cookTimeMinutes: 30,
+      servings: 6,
+      difficulty: "Easy",
+      cuisine: "Italian",
+      caloriesPerServing: 450,
+      tags: ["pasta", "beef", "tomato sauce"],
+      userId: 101,
+      image: "https://cdn.dummyjson.com/recipe-images/1.webp",
+      rating: 4.5,
+      reviewCount: 120,
+      mealType: ["dinner"],
     ),
     Recipe(
-      name: 'Donut',
-      img: kDonutImg, // Assuming you have a variable named kDonutImg
-      description:
-          'A light and fluffy donut topped with a sweet and shiny glaze.',
-      ingredients: {
-        'protein': 5,
-        'calories': 350,
-        'time': 35,
-      },
-      instructions: '''
-1. Prepare donut dough according to your preferred recipe or use store-bought dough.
-2. Fry or bake the donuts until golden brown.
-3. Make a glaze with powdered sugar, milk, and vanilla extract.
-4. Dip the cooled donuts into the glaze and let them set.
-    ''',
+      id: 2,
+      name: "Chicken Stir-Fry",
+      ingredients: [
+        "1 lb boneless, skinless chicken breasts, cut into bite-sized pieces",
+        "1 bell pepper, sliced",
+        "1 onion, sliced",
+        "1 cup broccoli florets",
+        "1/2 cup soy sauce",
+        "1/4 cup honey",
+        "2 tbsp cornstarch",
+        "1 tbsp sesame oil",
+      ],
+      instructions: [
+        "In a bowl, whisk together soy sauce, honey, and cornstarch.",
+        "Heat sesame oil in a large skillet or wok over medium-high heat.",
+        "Add chicken and cook until browned.",
+        "Add bell pepper, onion, and broccoli to the skillet and cook until tender-crisp.",
+        "Pour the sauce over the chicken and vegetables and cook until thickened.",
+        "Serve over rice.",
+      ],
+      prepTimeMinutes: 20,
+      cookTimeMinutes: 25,
+      servings: 4,
+      difficulty: "Medium",
+      cuisine: "Asian",
+      caloriesPerServing: 380,
+      tags: ["chicken", "vegetables", "stir-fry"],
+      userId: 102,
+      image: "https://cdn.dummyjson.com/recipe-images/1.webp",
+      rating: 4.2,
+      reviewCount: 95,
+      mealType: ["lunch", "dinner"],
     ),
     Recipe(
-      name: 'Zinger',
-      img: kZingerImg, // Assuming you have a variable named kZingerBurgerImg
-      description: 'A spicy and flavorful burger with a crispy chicken patty.',
-      ingredients: {
-        'protein': 40, // Adjust based on patty size
-        'calories': 600,
-        'time': 45,
-        // Adjust based on ingredients
-      },
-      instructions:
-          '''1. Marinate chicken breast in a mixture of yogurt, chili powder, paprika, and other spices for at least 30 minutes.2. Prepare burger buns according to package instructions (toast if desired).3. Cook the marinated chicken breast until golden brown and cooked through.4. Assemble the burger with your favorite toppings like lettuce, tomato, onion, cheese, and spicy mayo.
-    ''',
-    ),
-    Recipe(
-      name: 'Pizza',
-      img: kPizzaImg, // Assuming you have a variable named kPizzaImg
-      description:
-          'A crowd-pleasing pizza with a tomato sauce base, mozzarella cheese, and your favorite toppings.',
-      ingredients: {
-        'protein': 20, // Adjust based on toppings
-        'calories': 450,
-        'time': 30,
-        // Adjust based on size and toppings
-      },
-      instructions: '''
-1. Preheat oven to 450°F (230°C).
-2. Prepare pizza dough according to your preferred recipe or use store-bought dough.
-3. Spread pizza sauce on the dough, then top with mozzarella cheese and your desired toppings (pepperoni, sausage, vegetables, etc.).
-4. Bake for 15-20 minutes, or until the crust is golden brown and the cheese is melted and bubbly.
-    ''',
-    ),
-    Recipe(
-      name: 'Pasta',
-      img: kPastaImg, // Assuming you have a variable named kPastaImg
-      description:
-          'A comforting pasta dish with a rich tomato sauce and creamy cheese.',
-      ingredients: {
-        'protein': 15, // Adjust based on cheese and protein source
-        'calories': 500,
-        'time': 20,
-        // Adjust based on ingredients
-      },
-      instructions: '''
-1. Cook your favorite pasta according to package instructions.
-2. Sauté chopped onion and garlic in olive oil.
-3. Add crushed tomatoes, Italian seasoning, and a pinch of red pepper flakes for a kick (optional).
-4. Simmer the sauce for a few minutes, then stir in cream cheese or heavy cream for a creamy texture.
-5. Toss the cooked pasta with the sauce and grated Parmesan cheese.
-    ''',
-    ),
-    Recipe(
-      name: 'Meat',
-      img: kMeatImg,
-      description:
-          'A classic comfort food made with ground meat, breadcrumbs, and a flavorful glaze.',
-      ingredients: {
-        'protein': 35,
-        'calories': 500,
-        'time': 60,
-      },
-      instructions: '''
-1. Preheat oven to 375°F (190°C).
-2. Combine ground meat (beef, turkey, etc.), breadcrumbs, eggs, chopped onion, and your favorite seasonings.
-3. Form the mixture into a loaf shape and place on a baking sheet.
-4. Bake for 45-60 minutes, or until cooked through.
-5. Optionally, brush with a glaze made of ketchup, brown sugar, and mustard during the last few minutes of baking.
-    ''',
+      id: 3,
+      name: "Chocolate Chip Cookies",
+      ingredients: [
+        "2 1/4 cups all-purpose flour",
+        "1 tsp baking soda",
+        "1 tsp salt",
+        "1 cup (2 sticks) unsalted butter, softened",
+        "3/4 cup granulated sugar",
+        "3/4 cup packed brown sugar",
+        "1 tsp vanilla extract",
+        "2 large eggs",
+        "2 cups chocolate chips",
+      ],
+      instructions: [
+        "Preheat oven to 375 degrees F (190 degrees C).",
+        "In a small bowl, whisk together flour, baking soda, and salt.",
+        "In a large bowl, cream together butter, granulated sugar, and brown sugar until smooth.",
+        "Beat in vanilla extract and eggs until well combined.",
+        "Gradually add the dry ingredients to the wet ingredients, mixing until just combined.",
+        "Stir in chocolate chips.",
+        "Drop by rounded tablespoons onto ungreased baking sheets.",
+        "Bake for 9-11 minutes, or until golden brown.",
+        "Let cool on baking sheets for a few minutes before transferring to a wire rack to cool completely.",
+      ],
+      prepTimeMinutes: 10,
+      cookTimeMinutes: 10,
+      servings: 24,
+      difficulty: "Easy",
+      cuisine: "American",
+      caloriesPerServing: 150,
+      tags: ["dessert", "cookies", "chocolate"],
+      userId: 103,
+      image: "https://cdn.dummyjson.com/recipe-images/1.webp",
+      rating: 4.8,
+      reviewCount: 150,
+      mealType: ["dessert", "snack"],
     ),
   ];
 

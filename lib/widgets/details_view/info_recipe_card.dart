@@ -22,7 +22,7 @@ class InfoRecipeCard extends StatelessWidget {
           Icon(
             icon,
             size: 20,
-            color: Color.fromARGB(183, 0, 0, 0),
+            color: const Color.fromARGB(183, 0, 0, 0),
           ),
           const SizedBox(
             width: 5,

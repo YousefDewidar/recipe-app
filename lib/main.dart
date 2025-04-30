@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:recips_app/views/all_recipes_view.dart';
-import 'package:recips_app/views/home_view.dart';
+import 'package:recips_app/views/all_recommended_view.dart';
+import 'package:recips_app/views/search_view.dart';
+import 'package:recips_app/views/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +16,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        HomeView.id: (context) => const HomeView(),
+        SplashView.id: (context) => const SplashView(),
         AllRecipesView.id: (context) => const AllRecipesView(),
+        SearchView.id: (context) => const SearchView(),
+        AllRecommendedView.id: (context) => const AllRecommendedView(),
       },
-      initialRoute: HomeView.id,
+      initialRoute: SplashView.id,
     );
   }
 }

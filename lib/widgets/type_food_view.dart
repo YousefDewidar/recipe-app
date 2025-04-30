@@ -5,6 +5,8 @@ import 'package:recips_app/cubit/search_state.dart';
 import 'package:recips_app/helper/get_recipe_data.dart';
 import 'package:recips_app/widgets/type_food_card.dart';
 
+
+
 class TypeFoodView extends StatefulWidget {
   const TypeFoodView({
     super.key,
@@ -19,7 +21,7 @@ class _TypeFoodViewState extends State<TypeFoodView> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 15.0, bottom: 18),
+      padding: const EdgeInsets.only(top: 10.0, bottom: 18),
       child: SizedBox(
         height: 155,
         child: BlocConsumer<SearchCubit, SearchState>(

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class ImageFoodCard extends StatelessWidget {
   const ImageFoodCard({
-    super.key, required this.img,
+    super.key,
+    required this.img,
   });
   final String img;
 
@@ -23,7 +24,9 @@ class ImageFoodCard extends StatelessWidget {
           child: CircleAvatar(
             radius: 120,
             backgroundColor: Colors.transparent,
-            child: Image.asset(img),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.network(img)),
           ),
         ),
       ),

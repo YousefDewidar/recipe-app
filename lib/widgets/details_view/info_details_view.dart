@@ -6,28 +6,29 @@ class InfoDetailsView extends StatelessWidget {
     super.key,
     required this.recIngred,
   });
-  final Map<String, int> recIngred;
+  final List<String> recIngred;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           InfoRecipeCard(
             color: Colors.amberAccent,
             icon: Icons.timer_sharp,
-            title: '${recIngred['time'].toString()} Min',
+            title: '5 Min',
           ),
           InfoRecipeCard(
-              title: '${recIngred['calories'].toString()} kcal',
+              title: '100 kcal',
               color: Colors.greenAccent,
               icon: Icons.fireplace_outlined),
           InfoRecipeCard(
-              title: '${recIngred['protein'].toString()} g',
+              title: '20 g',
               color: Colors.purpleAccent,
               icon: Icons.celebration),
+        
         ],
       ),
     );
